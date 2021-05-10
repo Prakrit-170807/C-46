@@ -4,6 +4,7 @@ var levelselector=1
 var GameMode=0
 var UP_arrow,UP_arrow_img,DOWN_arrow,DOWN_arrow_img
 var con,con_img
+var text1
 
 function preload(){
   play_img = loadImage("PLAY.png")
@@ -16,6 +17,7 @@ function setup() {
   introduce = createSprite(width/2,0,width/2,width)
   play = createSprite(width/2,500,200,80)
   play.addImage(play_img)
+  text1="Mind Mapping"
 }
 
 function draw() {
@@ -49,19 +51,48 @@ function draw() {
     con = createSprite(width/2+50,500,50,20)
     con.shapeColor="black"
     if(mousePressedOver(con)){
-      GameMode=2
+      if(levelselector==1){
+        GameMode==2
+      }
+      if(levelselector==2){
+        GameMode==3
+      }
+      if(levelselector==3){
+        GameMode==4
+      }
+      if(levelselector==4){
+        GameMode==5
+      }
+      if(levelselector==5){
+        GameMode==6
+      }
+      if(levelselector==6){
+        GameMode==7
+      }
+      if(levelselector==7){
+        GameMode==8
+      }
+      if(levelselector==8){
+        GameMode==9
+      }
     }
   }
 
   if(GameMode==2){
+    background('#2E2E2E');
+    introduce.visiable=false
     introduce.destroy()
+    UP_arrow.visiable=false
     UP_arrow.destroy()
     DOWN_arrow.destroy()
+    con.destroy()
+    text1="⠀"
+    
   }
   console.log(GameMode)
   textSize(50)
   fill("black")
   textFont("Fattern") 
-  text('Mind Mapping',width/2-170,90)
+  text(text1,width/2-170,90)
 
 }
